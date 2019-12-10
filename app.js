@@ -12,7 +12,9 @@ const education =require('./routes/educations');
 const examTest=require('./routes/exam_Test');
 const studentGroups=require('./routes/studentGroups');
 const studentRelation =require('./routes/student_Relations');
-
+const studentGuardians=require('./routes/student_Guardians');
+const religions=require('./routes/religions');
+const rank =require('./routes/rank');
 
 app.use(bodyParser.json(),cors());
 
@@ -27,7 +29,9 @@ app.use('/educations',education);
 app.use('/examTest',examTest);
 app.use('/studentgroups',studentGroups);
 app.use('/studentRelation',studentRelation);
-
+app.use('/studentGuardian',studentGuardians);
+app.use('/religion',religions);
+app.use('/rank',rank);
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
